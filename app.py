@@ -76,6 +76,10 @@ def update_hover(hoverData):
     return f"Konnektor: {konnektor} | Semantik: {semantik} | Beleg: {beleg} | Anzahl: {anzahl}"
 
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8050))
+    app.run(host="0.0.0.0", port=port, debug=False)
+
     
